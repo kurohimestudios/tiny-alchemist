@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://r05xwjwivlhw"]
 
+[ext_resource type="Texture2D" uid="uid://dmnhlrvkg42r6" path="res://assets/potions/Transperent/Icon45.png" id="1_o5qli"]
+
 [node name="main" type="Node2D" unique_id=1888172734]
+
+[node name="Icon45" type="Sprite2D" parent="." unique_id=1376122286]
+position = Vector2(560, 317)
+texture = ExtResource("1_o5qli")
