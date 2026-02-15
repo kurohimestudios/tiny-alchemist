@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwwetb4bmb4r3"
-path="res://.godot/imported/arandula.png-1ffe5317db1f090f2bb9cdfff1a79b5d.ctex"
+path="res://.godot/imported/arandula.png-788c24a782f3f557750a3f1158a10e30.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/plants/arandula.png"
-dest_files=["res://.godot/imported/arandula.png-1ffe5317db1f090f2bb9cdfff1a79b5d.ctex"]
+source_file="res://Assets/plants/arandula.png"
+dest_files=["res://.godot/imported/arandula.png-788c24a782f3f557750a3f1158a10e30.ctex"]
 
 [params]
 
