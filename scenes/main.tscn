@@ -113,3 +113,5 @@ position = Vector2(1720, 950)
 
 [node name="Marker2D33" type="Marker2D" parent="HerbSpawner" unique_id=561966868]
 position = Vector2(1653, -907)
+
+[node name="Herbs" type="Node2D" parent="." unique_id=705181380]
