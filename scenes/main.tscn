@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://r05xwjwivlhw"]
 
 [ext_resource type="Script" uid="uid://bdk6mllcsbctu" path="res://Scripts/game_manager.gd" id="1_bo1nx"]
-[ext_resource type="Texture2D" uid="uid://cke7jyyeck43k" path="res://Assets/background/bushes_background.jpg" id="1_jjgbg"]
+[ext_resource type="Texture2D" uid="uid://cke7jyyeck43k" path="res://assets/background/bushes_background.jpg" id="1_jjgbg"]
+[ext_resource type="Texture2D" uid="uid://dyg7i3jq1s8fg" path="res://assets/potions/Background/Icon6.png" id="3_sugp2"]
 
 [node name="Main" type="Node2D" unique_id=1888172734]
 
@@ -18,3 +19,8 @@ texture = ExtResource("1_jjgbg")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=219623414]
 scale = Vector2(0.99999994, 0.99999994)
 zoom = Vector2(0.25, 0.25)
+
+[node name="Icon6" type="Sprite2D" parent="." unique_id=780763565]
+position = Vector2(1, 3)
+scale = Vector2(12.6875, 12.6875)
+texture = ExtResource("3_sugp2")
