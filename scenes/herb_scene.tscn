@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bbv8xvv11t0q4"]
+
+[ext_resource type="Texture2D" uid="uid://dwwetb4bmb4r3" path="res://assets/plants/arandula.png" id="1_jpbwa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sugp2"]
+radius = 132.84953
+
+[node name="Herb" type="StaticBody2D" unique_id=845869577]
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1871951972]
+scale = Vector2(5, 5)
+texture = ExtResource("1_jpbwa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1008740974]
+shape = SubResource("CircleShape2D_sugp2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1741006649]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=713134130]
+shape = SubResource("CircleShape2D_sugp2")

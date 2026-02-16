@@ -18,3 +18,98 @@ texture = ExtResource("2_sugp2")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=219623414]
 scale = Vector2(0.99999994, 0.99999994)
 zoom = Vector2(0.25, 0.25)
+
+[node name="HerbSpawner" type="Node2D" parent="." unique_id=159522714]
+
+[node name="Marker2D" type="Marker2D" parent="HerbSpawner" unique_id=212665293]
+position = Vector2(-1586, -1075)
+
+[node name="Marker2D2" type="Marker2D" parent="HerbSpawner" unique_id=1478915578]
+position = Vector2(-1359, -654)
+
+[node name="Marker2D3" type="Marker2D" parent="HerbSpawner" unique_id=405262884]
+position = Vector2(-983, -1087)
+
+[node name="Marker2D4" type="Marker2D" parent="HerbSpawner" unique_id=15300253]
+position = Vector2(-596, -830)
+
+[node name="Marker2D5" type="Marker2D" parent="HerbSpawner" unique_id=1773216918]
+position = Vector2(-869, -503)
+
+[node name="Marker2D6" type="Marker2D" parent="HerbSpawner" unique_id=160146199]
+position = Vector2(-1538, -158)
+
+[node name="Marker2D8" type="Marker2D" parent="HerbSpawner" unique_id=676088027]
+position = Vector2(-153, -288)
+
+[node name="Marker2D9" type="Marker2D" parent="HerbSpawner" unique_id=888389188]
+position = Vector2(222, -1109)
+
+[node name="Marker2D10" type="Marker2D" parent="HerbSpawner" unique_id=85777815]
+position = Vector2(449, -688)
+
+[node name="Marker2D11" type="Marker2D" parent="HerbSpawner" unique_id=139293384]
+position = Vector2(825, -1121)
+
+[node name="Marker2D12" type="Marker2D" parent="HerbSpawner" unique_id=37797145]
+position = Vector2(1212, -864)
+
+[node name="Marker2D13" type="Marker2D" parent="HerbSpawner" unique_id=1651869895]
+position = Vector2(939, -537)
+
+[node name="Marker2D14" type="Marker2D" parent="HerbSpawner" unique_id=795459213]
+position = Vector2(270, -192)
+
+[node name="Marker2D15" type="Marker2D" parent="HerbSpawner" unique_id=1483752807]
+position = Vector2(1014, -107)
+
+[node name="Marker2D16" type="Marker2D" parent="HerbSpawner" unique_id=1799465355]
+position = Vector2(1655, -322)
+
+[node name="Marker2D17" type="Marker2D" parent="HerbSpawner" unique_id=500155971]
+position = Vector2(-1593, 171)
+
+[node name="Marker2D18" type="Marker2D" parent="HerbSpawner" unique_id=1009210368]
+position = Vector2(-1366, 592)
+
+[node name="Marker2D19" type="Marker2D" parent="HerbSpawner" unique_id=1160724870]
+position = Vector2(-990, 159)
+
+[node name="Marker2D20" type="Marker2D" parent="HerbSpawner" unique_id=803123276]
+position = Vector2(-603, 416)
+
+[node name="Marker2D21" type="Marker2D" parent="HerbSpawner" unique_id=1206016817]
+position = Vector2(-876, 743)
+
+[node name="Marker2D22" type="Marker2D" parent="HerbSpawner" unique_id=609785457]
+position = Vector2(-1545, 1088)
+
+[node name="Marker2D23" type="Marker2D" parent="HerbSpawner" unique_id=597701108]
+position = Vector2(-801, 1173)
+
+[node name="Marker2D24" type="Marker2D" parent="HerbSpawner" unique_id=662811256]
+position = Vector2(-160, 958)
+
+[node name="Marker2D25" type="Marker2D" parent="HerbSpawner" unique_id=1190018525]
+position = Vector2(287, 163)
+
+[node name="Marker2D26" type="Marker2D" parent="HerbSpawner" unique_id=1095956281]
+position = Vector2(514, 584)
+
+[node name="Marker2D28" type="Marker2D" parent="HerbSpawner" unique_id=890898639]
+position = Vector2(1277, 408)
+
+[node name="Marker2D29" type="Marker2D" parent="HerbSpawner" unique_id=1407752544]
+position = Vector2(1004, 735)
+
+[node name="Marker2D30" type="Marker2D" parent="HerbSpawner" unique_id=1145947478]
+position = Vector2(335, 1080)
+
+[node name="Marker2D31" type="Marker2D" parent="HerbSpawner" unique_id=960392910]
+position = Vector2(1079, 1165)
+
+[node name="Marker2D32" type="Marker2D" parent="HerbSpawner" unique_id=1358732008]
+position = Vector2(1720, 950)
+
+[node name="Marker2D33" type="Marker2D" parent="HerbSpawner" unique_id=561966868]
+position = Vector2(1653, -907)
