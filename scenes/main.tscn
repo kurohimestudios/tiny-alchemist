@@ -85,7 +85,7 @@ position = Vector2(-876, 743)
 position = Vector2(-1545, 1088)
 
 [node name="Marker2D23" type="Marker2D" parent="HerbSpawner" unique_id=597701108]
-position = Vector2(-801, 1173)
+position = Vector2(-801, 1126)
 
 [node name="Marker2D24" type="Marker2D" parent="HerbSpawner" unique_id=662811256]
 position = Vector2(-160, 958)
@@ -106,7 +106,7 @@ position = Vector2(1004, 735)
 position = Vector2(335, 1080)
 
 [node name="Marker2D31" type="Marker2D" parent="HerbSpawner" unique_id=960392910]
-position = Vector2(1079, 1165)
+position = Vector2(1079, 1071)
 
 [node name="Marker2D32" type="Marker2D" parent="HerbSpawner" unique_id=1358732008]
 position = Vector2(1720, 950)

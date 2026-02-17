@@ -3,6 +3,7 @@ class_name GameManager
 extends Node
 
 var herb_scene = preload("res://scenes/herb_scene.tscn")
+var current_frame : int = 0
 
 #this will be changed later
 @export var herbs_per_wave : int = 5
@@ -20,10 +21,12 @@ func spawn_herb ():
 	for h in herbs_per_wave:
 		var herb = herb_scene.instantiate()
 		$"../Herbs".add_child(herb)
+		herb.setup(current_frame)
 		herb.position = available_spots[h].position
 		herb.herb_died.connect(kill_herb)
+	
 
 func kill_herb():
 	alive_herbs -= 1
-	if alive_herbs == 0:
+	if alive_herbs == 0: 
 		spawn_herb()

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bbv8xvv11t0q4"]
 
 [ext_resource type="Script" uid="uid://bwhnoaue01113" path="res://Scripts/herb.gd" id="1_1v8oc"]
-[ext_resource type="Texture2D" uid="uid://dwwetb4bmb4r3" path="res://assets/plants/arandula.png" id="1_jpbwa"]
+[ext_resource type="Texture2D" uid="uid://chci02aanv06t" path="res://assets/plants/64_plants_modified.png" id="2_1v8oc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sugp2"]
 radius = 132.84953
@@ -10,15 +10,21 @@ radius = 132.84953
 script = ExtResource("1_1v8oc")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1871951972]
-scale = Vector2(5, 5)
-texture = ExtResource("1_jpbwa")
+position = Vector2(278.99997, -151)
+scale = Vector2(10, 10)
+texture = ExtResource("2_1v8oc")
+offset = Vector2(-27.899998, 15.099999)
+hframes = 19
+vframes = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1008740974]
+scale = Vector2(1.5, 1.5)
 shape = SubResource("CircleShape2D_sugp2")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1741006649]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=713134130]
+scale = Vector2(1.5, 1.5)
 shape = SubResource("CircleShape2D_sugp2")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
