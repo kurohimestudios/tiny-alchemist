@@ -8,17 +8,21 @@ var damage : int = 5
 func setup(frame : int):
 	$Sprite.frame = frame
 
+#determine herb hp scaling (changes to be made here)
 func set_herb_health(frame : int):
 	herb_health = 10 * (2 ** frame)
 
+#return how many herbs there are in the sprite sheet
 func get_total_frame():
 	return sprite.hframes * sprite.vframes
 
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+#recognize the input (click) on the herbs, and calls the take damage function
+func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			_on_take_damage()
 
+#register how much damage the herb take, killing it if the hp gets to 0
 func _on_take_damage ():
 	herb_health -= damage
 	if herb_health <= 0:

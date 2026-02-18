@@ -12,6 +12,7 @@ var alive_herbs : int = 0
 func _ready() -> void:
 	spawn_herb()
 
+#spawn herbs using random existing points and exact number depending where the game is
 func spawn_herb ():
 	var available_spots = $"../HerbSpawner".get_children().duplicate()
 	available_spots.shuffle()
@@ -26,9 +27,10 @@ func spawn_herb ():
 		herb.position = available_spots[h].position
 		herb.herb_died.connect(kill_herb)
 	
-
+#monitor how many herbs are alive to later respawn it when the alive reach 0
 func kill_herb():
 	alive_herbs -= 1
 	if alive_herbs == 0: 
-		current_frame += 1
+		#current_frame += 1
+		await get_tree().create_timer(0.2).timeout
 		spawn_herb()
