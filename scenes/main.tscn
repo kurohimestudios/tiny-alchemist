@@ -8,7 +8,7 @@
 [node name="GameManager" type="Node" parent="." unique_id=893811352]
 script = ExtResource("1_0wfyh")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="GameManager" unique_id=336855344]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=336855344]
 
 [node name="BushesBackground" type="Sprite2D" parent="." unique_id=36338186]
 z_index = -1000
