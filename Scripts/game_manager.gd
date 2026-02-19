@@ -9,7 +9,7 @@ var background_texture = preload("res://assets/background/garden_background.jpg"
 var current_frame : int = 0
 var kill_count : int = 0
 var current_level : int = 1
-var required_kills : int = 1
+var required_kills : int = 1 #temporary value
 var herb_probalities : Array = [100.0, 0.0, 0.0]
 
 #this will be changed later
@@ -67,10 +67,8 @@ func get_random_herb ():
 	
 	var roll = randf_range(0, total_weight)
 	var cursor = 0.0
-	print(roll)
 	
 	for p in herb_probalities:
-		print(p)
 		cursor += p
 		if roll <= cursor:
 			current_frame = index
@@ -79,9 +77,16 @@ func get_random_herb ():
 
 #change the probalility depending in which level the player is.
 func change_probability (level : int):
+	if herb_probalities [0] < herb_probalities [2]:
+		swap_herbs()
+	
 	if level % 2 == 0:
 		herb_probalities [0] -= 2.5
 		herb_probalities [1] += 2.5
 	if level % 3 == 0:
 		herb_probalities [0] -= 2.5
 		herb_probalities [2] += 2.5
+
+#future function that will change the herb_probability to initiate a new plant
+func swap_herbs ():
+	pass

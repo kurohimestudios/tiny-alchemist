@@ -10,7 +10,7 @@ func setup(frame : int):
 
 #determine herb hp scaling (changes to be made here)
 func set_herb_health(frame : int):
-	herb_health = 1 * (2 ** frame)
+	herb_health = 1 * (2 ** frame) #temporary value
 
 #return how many herbs there are in the sprite sheet
 func get_total_frame():
