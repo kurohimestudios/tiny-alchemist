@@ -4,6 +4,7 @@ extends StaticBody2D
 signal herb_died
 var herb_health : int
 var damage : int = 5
+@onready var mouse_hover = get_tree().get_first_node_in_group("Player")
 
 func setup(frame : int):
 	$Sprite.frame = frame
@@ -28,9 +29,12 @@ func _on_take_damage ():
 	if herb_health <= 0:
 		herb_died.emit()
 		queue_free()
+		_on_area_2d_mouse_exited()
 
-func _on_area_2d_mouse_entered() -> void:
-	pass
+func _on_area_2d_mouse_entered():
+	mouse_hover.visible = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
-func _on_area_2d_mouse_exited() -> void:
-	pass 
+func _on_area_2d_mouse_exited():
+	mouse_hover.visible = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
