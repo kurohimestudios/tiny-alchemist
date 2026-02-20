@@ -20,7 +20,6 @@ var base_probability : float = 2.5
 var prob_upgrade : float = 1.0 #will be used when upgrades be launched
 
 func _ready() -> void:
-	set_brightness()
 	spawn_herb()
 
 #spawn herbs using random existing points and exact number depending where the game is
@@ -48,10 +47,6 @@ func kill_herb():
 		kill_count += 1
 		await get_tree().create_timer(0.2).timeout
 		spawn_herb()
-
-#temporary function to deal with the background brightness
-func set_brightness ():
-	background_image.modulate = Color(0.8, 0.8, 0.8, 1)
 
 #change the level, changing the herb spawn, sprite, and also the background
 func change_level ():
@@ -94,6 +89,7 @@ func change_probability (level : int):
 #change the herb_probability and update the current_frames for new plants
 func swap_probabilities ():
 	var index = 0
+	base_probability = base_probability/2
 	
 	herb_probalities [0] = herb_probalities [1] + herb_probalities [2]
 	herb_probalities [1] = 100 - herb_probalities [0]

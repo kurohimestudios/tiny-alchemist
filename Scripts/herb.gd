@@ -28,3 +28,9 @@ func _on_take_damage ():
 	if herb_health <= 0:
 		herb_died.emit()
 		queue_free()
+
+func _on_area_2d_mouse_entered() -> void:
+	pass
+
+func _on_area_2d_mouse_exited() -> void:
+	pass 
