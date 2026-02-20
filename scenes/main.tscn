@@ -12,11 +12,12 @@ script = ExtResource("1_0wfyh")
 
 [node name="BushesBackground" type="Sprite2D" parent="." unique_id=36338186]
 z_index = -1000
-scale = Vector2(2, 2)
+position = Vector2(3, 0)
+scale = Vector2(2.2988281, 2.2763672)
 texture = ExtResource("2_0wfyh")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=219623414]
-zoom = Vector2(0.25, 0.25)
+zoom = Vector2(0.2, 0.25)
 
 [node name="HerbSpawner" type="Node2D" parent="." unique_id=159522714]
 
