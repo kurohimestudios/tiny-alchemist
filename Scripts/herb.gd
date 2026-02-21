@@ -2,6 +2,8 @@ extends StaticBody2D
 
 @onready var sprite : Sprite2D = $Sprite
 signal herb_died
+signal change_scythe
+signal change_mouse_idle
 var herb_health : int
 var damage : int = 5
 @onready var mouse_hover = get_tree().get_first_node_in_group("Player")
@@ -38,9 +40,7 @@ func flash():
 	tween.tween_property($Sprite.material, 'shader_parameter/progress', 0.0, 0.4)
 
 func _on_area_2d_mouse_entered():
-	mouse_hover.visible = true
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	change_scythe.emit()
 
 func _on_area_2d_mouse_exited():
-	mouse_hover.visible = false
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	change_mouse_idle.emit()

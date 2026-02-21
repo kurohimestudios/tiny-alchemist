@@ -3,6 +3,8 @@ class_name GameManager
 extends Node
 
 @onready var background_image : Sprite2D = $"../BushesBackground"
+@onready var player : Sprite2D = $"../Player"
+@onready var anim : AnimationPlayer = $"../Player/AnimationPlayer"
 
 #this will be changed later
 @export var herbs_per_wave : int = 10
@@ -39,6 +41,8 @@ func spawn_herb ():
 		herb.set_herb_health(herb_index)
 		herb.position = available_spots[h].position
 		herb.herb_died.connect(kill_herb)
+		herb.change_scythe.connect(change_player_sprite_scythe)
+		herb.change_mouse_idle.connect(change_player_sprite_mouse)
 	
 #monitor how many herbs are alive to later respawn it when the alive reach 0
 func kill_herb():
@@ -47,6 +51,16 @@ func kill_herb():
 		kill_count += 1
 		await get_tree().create_timer(0.2).timeout
 		spawn_herb()
+
+func change_player_sprite_scythe():
+	anim.current_animation = "RESET"
+	player.hframes = 1
+	player.texture = load("res://assets/tools/Scythe_1.png")
+
+func change_player_sprite_mouse():
+	anim.current_animation = "mouse_idle"
+	player.hframes = 4
+	player.texture = load("res://assets/tools/Mouse_idle_1.png")
 
 #change the level, changing the herb spawn, sprite, and also the background
 func change_level ():
