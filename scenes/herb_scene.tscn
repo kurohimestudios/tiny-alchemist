@@ -5,13 +5,14 @@
 [ext_resource type="Shader" uid="uid://c4848vb5em0gv" path="res://shaders/flash.gdshader" id="2_wks0g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sw04f"]
+resource_local_to_scene = true
 shader = ExtResource("2_wks0g")
 shader_parameter/progress = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sugp2"]
 radius = 132.84953
 
-[node name="Herb" type="StaticBody2D" unique_id=845869577]
+[node name="Herb" type="StaticBody2D" unique_id=845869577 groups=["Herbs"]]
 script = ExtResource("1_1v8oc")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1871951972]
