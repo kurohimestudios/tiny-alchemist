@@ -37,10 +37,27 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3]
 }
 
+[sub_resource type="Animation" id="Animation_o6xl0"]
+resource_name = "transition"
+length = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o6xl0"]
 _data = {
 &"RESET": SubResource("Animation_tbgi4"),
-&"mouse_idle": SubResource("Animation_tefeu")
+&"mouse_idle": SubResource("Animation_tefeu"),
+&"transition": SubResource("Animation_o6xl0")
 }
 
 [node name="Main" type="Node2D" unique_id=1888172734]

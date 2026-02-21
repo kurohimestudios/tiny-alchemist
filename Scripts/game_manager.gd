@@ -53,6 +53,9 @@ func kill_herb():
 		spawn_herb()
 
 func change_player_sprite_scythe():
+	player.texture = load("res://assets/tools/Mouse_transition_1.png")
+	anim.current_animation = "transition"
+	await get_tree().create_timer(0.2).timeout
 	anim.current_animation = "RESET"
 	player.hframes = 1
 	player.texture = load("res://assets/tools/Scythe_1.png")
