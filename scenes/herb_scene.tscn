@@ -2,6 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bwhnoaue01113" path="res://Scripts/herb.gd" id="1_1v8oc"]
 [ext_resource type="Texture2D" uid="uid://chci02aanv06t" path="res://assets/plants/64_plants_modified.png" id="2_1v8oc"]
+[ext_resource type="Shader" uid="uid://c4848vb5em0gv" path="res://shaders/flash.gdshader" id="2_wks0g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sw04f"]
+shader = ExtResource("2_wks0g")
+shader_parameter/progress = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sugp2"]
 radius = 132.84953
@@ -10,6 +15,7 @@ radius = 132.84953
 script = ExtResource("1_1v8oc")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1871951972]
+material = SubResource("ShaderMaterial_sw04f")
 position = Vector2(278.99997, -151)
 scale = Vector2(10, 10)
 texture = ExtResource("2_1v8oc")

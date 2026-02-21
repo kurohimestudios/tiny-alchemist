@@ -5,7 +5,7 @@ extends Node
 @onready var background_image : Sprite2D = $"../BushesBackground"
 
 #this will be changed later
-@export var herbs_per_wave : int = 5
+@export var herbs_per_wave : int = 10
 
 var herb_scene = preload("res://scenes/herb_scene.tscn")
 var background_texture = preload("res://assets/background/garden_background.jpg")

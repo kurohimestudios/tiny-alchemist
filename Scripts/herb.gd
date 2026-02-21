@@ -22,6 +22,7 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			_on_take_damage()
+			flash()
 
 #register how much damage the herb take, killing it if the hp gets to 0
 func _on_take_damage ():
@@ -30,6 +31,11 @@ func _on_take_damage ():
 		herb_died.emit()
 		queue_free()
 		_on_area_2d_mouse_exited()
+
+func flash():
+	var tween = get_tree().create_tween()
+	tween.tween_property($Sprite.material, 'shader_parameter/progress', 1.0, 0.2)
+	tween.tween_property($Sprite.material, 'shader_parameter/progress', 0.0, 0.4)
 
 func _on_area_2d_mouse_entered():
 	mouse_hover.visible = true
