@@ -12,7 +12,7 @@ func setup(frame : int):
 
 #determine herb hp scaling (changes to be made here)
 func set_herb_health(frame : int):
-	herb_health = 100 * (2 ** frame) #temporary value
+	herb_health = 1 * (2 ** frame) #temporary value
 
 #return how many herbs there are in the sprite sheet
 func get_total_frame():
@@ -34,6 +34,7 @@ func _on_take_damage ():
 		queue_free()
 		_on_area_2d_mouse_exited()
 
+#flash the plant when it takes damage, the result is not the desired one it still need improvement
 func flash():
 	var tween = get_tree().create_tween()
 	tween.tween_property($Sprite.material, 'shader_parameter/progress', 1.0, 0.2)
@@ -43,4 +44,4 @@ func _on_area_2d_mouse_entered():
 	change_scythe.emit()
 
 func _on_area_2d_mouse_exited():
-	change_mouse_idle.emit()
+	change_mouse_idle.emit.call_deferred()

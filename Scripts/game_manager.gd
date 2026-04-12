@@ -12,13 +12,14 @@ extends Node
 var herb_scene = preload("res://scenes/herb_scene.tscn")
 var background_texture = preload("res://assets/background/garden_background.jpg")
 
+var _transitioning := false
 var current_frames : Array = [0, 1, 2]
 var kill_count : int = 0
 var current_level : int = 1
 var required_kills : int = 1 #temporary value
 var herb_probalities : Array = [100.0, 0.0, 0.0]
 var alive_herbs : int = 0
-var base_probability : float = 2.5
+var base_probability : float = 22.5
 var prob_upgrade : float = 1.0 #will be used when upgrades be launched
 
 func _ready() -> void:
@@ -53,15 +54,24 @@ func kill_herb():
 		spawn_herb()
 
 func change_player_sprite_scythe():
+	_transitioning = true
+	anim.stop()
 	player.texture = load("res://assets/tools/Mouse_transition_1.png")
-	anim.current_animation = "transition"
+	anim.play("transition")
+	
 	await get_tree().create_timer(0.2).timeout
-	anim.current_animation = "RESET"
+	
+	if not _transitioning:
+		return
+	
+	anim.play("RESET")
 	player.hframes = 1
 	player.texture = load("res://assets/tools/Scythe_1.png")
 
 func change_player_sprite_mouse():
-	anim.current_animation = "mouse_idle"
+	_transitioning = false
+	anim.stop()
+	anim.play("mouse_idle")
 	player.hframes = 4
 	player.texture = load("res://assets/tools/Mouse_idle_1.png")
 
@@ -71,6 +81,9 @@ func change_level ():
 	#required_kills = current_level * 1.25
 	kill_count = 0
 	change_probability(current_level)
+	
+	for p in herb_probalities:
+		print(p)
 
 #get a herb depending on the probability for that, only possible for 3 different herb/level
 func get_random_herb ():
@@ -93,24 +106,39 @@ func get_random_herb ():
 #change the probalility depending in which level the player is.
 func change_probability (level : int):
 	if herb_probalities [0] < herb_probalities [2]:
-		swap_probabilities()
+		swap_probabilities() 
 	
 	if level % 2 == 0:
-		herb_probalities [0] -= base_probability * prob_upgrade
-		herb_probalities [1] += base_probability * prob_upgrade
+		if (herb_probalities [0] - base_probability * prob_upgrade) < 0:
+			herb_probalities [0] = 0
+			herb_probalities [1] += base_probability * prob_upgrade
+			
+		else:
+			herb_probalities [0] -= base_probability * prob_upgrade
+			herb_probalities [1] += base_probability * prob_upgrade
 
 	if level % 3 == 0:
-		herb_probalities [0] -= base_probability * prob_upgrade
-		herb_probalities [2] += base_probability * prob_upgrade
+		if (herb_probalities [0] - base_probability * prob_upgrade) < 0:
+			herb_probalities [0] = 0
+			herb_probalities [2] += base_probability * prob_upgrade
+		else:
+			herb_probalities [0] -= base_probability * prob_upgrade
+			herb_probalities [2] += base_probability * prob_upgrade
 
 #change the herb_probability and update the current_frames for new plants
 func swap_probabilities ():
 	var index = 0
 	base_probability = base_probability/2
 	
-	herb_probalities [0] = herb_probalities [1] + herb_probalities [2]
-	herb_probalities [1] = 100 - herb_probalities [0]
-	herb_probalities [2] = 0
+	if herb_probalities [1] + herb_probalities [2] >= 100:
+		herb_probalities [0] = 100
+		herb_probalities [1] = 0
+		herb_probalities [2] = 0
+	
+	else:
+		herb_probalities [0] = herb_probalities [1] + herb_probalities [2]
+		herb_probalities [1] = 100 - herb_probalities [0]
+		herb_probalities [2] = 0
 	
 	while index < 3:
 		current_frames [index] += 1
