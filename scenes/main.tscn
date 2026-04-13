@@ -117,7 +117,8 @@ position = Vector2(-190, -6)
 [node name="Herbs" type="Node2D" parent="." unique_id=705181380]
 
 [node name="Player" type="Sprite2D" parent="." unique_id=2049065869 groups=["Player"]]
-position = Vector2(-785, -276)
+position = Vector2(-585, -203)
+scale = Vector2(2, 2)
 texture = ExtResource("3_jyhfs")
 hframes = 4
 script = ExtResource("4_tbgi4")
